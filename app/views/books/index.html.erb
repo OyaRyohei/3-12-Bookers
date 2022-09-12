@@ -1,3 +1,12 @@
 <h1>Books</h1>
 
+<% @books.each do |book| %>
+<!-- 上記の|book|の変数はどこで定義しているのか -->
 
+  <p>Title</p>
+  <span><%= book.title %></span>
+  
+  <p>Body</p>
+  <span><%= book.body %></span>
+  
+<% end %>
