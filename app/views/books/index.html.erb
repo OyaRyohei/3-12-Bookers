@@ -1,5 +1,6 @@
 <h1>Books</h1>
 
+<!-- 以下、一覧表示 -->
 <% @books.each do |book| %>
 <!-- 上記の|book|の変数はどこで定義しているのか -->
 
@@ -9,4 +10,22 @@
   <p>Body</p>
   <span><%= book.body %></span>
   
+  <!-- Show、Edit、Destroy画面へのリンク 
+  < %= link_to "Show", book_path(@book.id) %>
+  < %= link_to "Edit", edit_book_path(@book.id) %>
+  -->
+  
+<% end %>
+
+<!-- 以下、投稿機能 -->
+<h1>New Book</h1>
+
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit "Create Book" %>
 <% end %>
