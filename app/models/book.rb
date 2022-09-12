@@ -1,6 +1,5 @@
 class Book < ApplicationRecord
-  #has_one_attached :image
-  
-  #volidates :title,presence: true
-  #volidates :body,presence: true
+  validates :title, presence: true
+  validates :body, presence: true
 end
+
